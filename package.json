@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@philihp/prettier-config": "1.0.0",
+    "dotenv": "16.3.1",
+    "eve-swagger": "0.3.3",
+    "express": "4.18.2",
+    "form-urlencoded": "6.1.4",
+    "jsonwebtoken": "9.0.2",
+    "jwks-rsa": "3.1.0",
+    "open": "9.1.0",
+    "ramda": "0.29.1"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "prettier": "@philihp/prettier-config"
+}
