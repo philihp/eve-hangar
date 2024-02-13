@@ -5,7 +5,7 @@ on:
 
 jobs:
   refresh:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
