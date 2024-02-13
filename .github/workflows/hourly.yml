@@ -1,0 +1,17 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu_latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - run: npm run refresh
