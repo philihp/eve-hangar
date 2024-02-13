@@ -40,6 +40,8 @@ const accessToken = async (character_id) => {
 }
 
 const execute = async () => {
+  console.log(process.env)
+
   await authenticate()
   const characters = await selectCharacters(
     'id',
