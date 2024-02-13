@@ -43,8 +43,9 @@ const execute = async () => {
   await authenticate()
   const characters = await selectCharacters(
     'id',
-    'wWlgxxUMwTlfDdzpzUw3io3zxbY=' // sir cuddles
-    // 'fTWbcvorPidXBXybfbo/JpND0Qc=' // international blue
+    'KA1oPnkU/qG1zsV6BfY8CbDqEKc=' // William Ralston
+    // 'wWlgxxUMwTlfDdzpzUw3io3zxbY=' // sir cuddles
+    //'fTWbcvorPidXBXybfbo/JpND0Qc=' // international blue
   )
 
   const character_id = characters[0]
