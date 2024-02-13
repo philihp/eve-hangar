@@ -12,6 +12,7 @@
     "ramda": "0.29.1"
   },
   "scripts": {
+    "debug": "node src/debug.js",
     "refresh": "node src/refresh.js",
     "connect": "node src/connect.js",
     "ping": "node src/ping-db.js"
