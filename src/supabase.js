@@ -1,11 +1,21 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
+// const supabaseKey = process.env.SUPABASE_KEY
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY
 const supabaseUsername = process.env.SUPABASE_USERNAME
 const supabasePassword = process.env.SUPABASE_PASSWORD
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
+
+export const sudobase = createClient(supabaseUrl, supabaseServiceKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+})
+
+export const supabaseAdmin = sudobase.auth.admin
 
 export const authenticate = async () => {
   const { data, error } = await supabase.auth.signInWithPassword({

@@ -1,4 +1,7 @@
 {
+  "name": "eve-hangar",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
   "dependencies": {
     "@philihp/prettier-config": "1.0.0",
@@ -8,14 +11,28 @@
     "form-urlencoded": "6.1.4",
     "jsonwebtoken": "9.0.2",
     "jwks-rsa": "3.1.0",
+    "next": "14.1.0",
     "open": "9.1.0",
-    "ramda": "0.29.1"
+    "ramda": "0.29.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "scripts": {
-    "debug": "node src/debug.js",
-    "refresh": "node src/refresh.js",
     "connect": "node src/connect.js",
-    "ping": "node src/ping-db.js"
+    "dev": "next dev",
+    "build": "next build",
+    "refresh": "node src/refresh.js",
+    "lint": "next lint",
+    "ping": "node src/ping-db.js",
+    "start": "next start"
   },
-  "prettier": "@philihp/prettier-config"
+  "prettier": "@philihp/prettier-config",
+  "devDependencies": {
+    "@types/node": "20.11.19",
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.1.0",
+    "typescript": "5.3.3"
+  }
 }
