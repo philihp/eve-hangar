@@ -18,9 +18,10 @@
     "react-dom": "18.2.0"
   },
   "scripts": {
+    "build": "next build",
     "connect": "node src/connect.js",
     "dev": "next dev",
-    "build": "next build",
+    "hourly": "node src/hourly.js",
     "refresh": "node src/refresh.js",
     "lint": "next lint",
     "ping": "node src/ping-db.js",
