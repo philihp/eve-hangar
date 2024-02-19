@@ -23,8 +23,8 @@ export async function login(formData: FormData) {
 
   console.log({data})
 
-  revalidatePath('/', 'layout')
-  redirect('/')
+  // revalidatePath('/', 'layout')
+  // redirect('/')
 }
 
 export async function signup(formData: FormData) {
@@ -44,6 +44,6 @@ export async function signup(formData: FormData) {
 
   console.log({data})
 
-  revalidatePath('/', 'layout')
-  redirect('/')
+  // revalidatePath('/', 'layout')
+  // redirect('/')
 }
