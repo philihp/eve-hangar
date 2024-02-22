@@ -22,12 +22,12 @@ export async function signup(formData: FormData) {
     }
   })
 
-  if (error) {
-    console.log(error)
-    redirect('/error')
-  }
+  // if (error) {
+  //   console.log(error)
+  //   redirect('/error')
+  // }
 
-  console.log({data})
+  console.log('RET', {data, error})
 
   return data
 }
