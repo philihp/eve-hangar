@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link"
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "EVE Hangar",
-  description: "EVE Hangar Display",
+  description: "EVE Online Public Hangar",
 };
 
 export default function RootLayout({
@@ -13,7 +14,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <header>
+          [
+            <Link href="/auth/login">Login</Link>
+          ]
+          [
+            <Link href="/auth/register">Register</Link>
+          ]
+        </header>
+
+      {children}
+      
+      </body>
     </html>
   );
 }
