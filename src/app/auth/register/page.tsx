@@ -6,8 +6,8 @@ import { signup } from './actions'
 export default function LoginPage() {
   const [response, setResponse] = useState('')
   const signupAndReturn = async (formData: FormData) => {
-    const { error, data } = await signup(formData)
-    setResponse(JSON.stringify({error, data}, undefined, 2))
+    const { error } = await signup(formData)
+    setResponse(error?.message ?? 'A perfect time to check your email inbox.')
   }
 
   return (
