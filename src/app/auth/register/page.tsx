@@ -6,8 +6,8 @@ import { signup } from './actions'
 export default function LoginPage() {
   const [response, setResponse] = useState('')
   const signupAndReturn = async (formData: FormData) => {
-    const rc = await signup(formData)
-    setResponse(JSON.stringify(rc))
+    const { error, data } = await signup(formData)
+    setResponse(JSON.stringify({error, data}, undefined, 2))
   }
 
   return (
@@ -17,9 +17,9 @@ export default function LoginPage() {
       <label htmlFor="password">Password:</label>
       <input id="password" name="password" type="password" required />
       <button formAction={signupAndReturn}>Sign up</button>
-      <div>
+      <pre>
         [{response}]
-      </div>
+      </pre>
     </form>
   )
 }

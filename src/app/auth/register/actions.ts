@@ -29,5 +29,5 @@ export async function signup(formData: FormData) {
 
   console.log('RET', {data, error})
 
-  return data
+  return { data, error}
 }
