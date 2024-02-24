@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@next/third-parties": "14.1.0",
     "@philihp/prettier-config": "1.0.0",
-    "@supabase/auth-helpers-nextjs": "^0.9.0",
-    "@supabase/ssr": "^0.1.0",
-    "@supabase/supabase-js": "^2.39.2",
+    "@supabase/auth-helpers-nextjs": "0.9.0",
+    "@supabase/ssr": "0.1.0",
+    "@supabase/supabase-js": "2.39.2",
     "dotenv": "16.3.1",
     "express": "4.18.2",
     "form-urlencoded": "6.1.4",
@@ -36,6 +37,6 @@
     "@types/react-dom": "18.2.19",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
-    "typescript": "^5.3.3"
+    "typescript": "5.3.3"
   }
 }

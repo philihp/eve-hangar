@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
 import Link from "next/link"
 import "./globals.css";
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
+          <h1>EVE Hangar</h1>
           [
             <Link href="/auth/login">Login</Link>
           ]
@@ -23,10 +25,10 @@ export default function RootLayout({
             <Link href="/auth/register">Register</Link>
           ]
         </header>
-
-      {children}
-      
+        <hr />
+        {children}
       </body>
+      <GoogleAnalytics gaId="G-F0XT9PME9M" />
     </html>
   );
 }
