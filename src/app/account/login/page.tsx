@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { login } from './actions'
 import { redirect } from 'next/navigation'
 
-export default function LoginPage() {
+const Login = () => {
   const [response, setResponse] = useState('')
   const loginAndReturn = async (formData: FormData) => {
     const error = await login(formData)
     if (error) {
-      setResponse(error ?? '')
+      setResponse(error)
       return;
     }
     redirect('/')
@@ -19,13 +19,18 @@ export default function LoginPage() {
     <>
       <h1>Login</h1>
       <p>Login to access your hangar.</p>
-      <form>
+      <form onSubmit={() => setResponse('')}>
         <label htmlFor="email">Email:</label><br />
         <input id="email" name="email" type="email" required /><br />
         <label htmlFor="password">Password:</label><br />
         <input id="password" name="password" type="password" required /><br />
         <button formAction={loginAndReturn}>Log in</button>
-        {response}
+        {response && <>
+          <svg height="10" width="20">
+            <circle cx="10" cy="5" r="5" fill="#FF0000" />
+          </svg>
+          {response}
+        </>}
         <div>
           <a href="reset">Forgot Password</a>
         </div>
@@ -33,3 +38,5 @@ export default function LoginPage() {
     </>
   )
 }
+
+export default Login

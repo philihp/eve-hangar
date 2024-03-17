@@ -15,9 +15,9 @@ const Header = async () => {
     {!userId &&
       <>
         &nbsp;[&nbsp;
-        <Link href="/auth/login">Login</Link>
+        <Link href="/account/login">Login</Link>
         &nbsp;|&nbsp;
-        <Link href="/auth/register">Register</Link>
+        <Link href="/account/register">Register</Link>
         &nbsp;]
       </>}
     {userId &&
@@ -25,7 +25,7 @@ const Header = async () => {
         &nbsp;[&nbsp;
         {userId}
         &nbsp;|&nbsp;
-        <Link href="/auth/logoff">Logoff</Link> ]
+        <Link href="/account/logoff">Logoff</Link> ]
       </>}
   </header>
 }
