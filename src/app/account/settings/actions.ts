@@ -23,19 +23,15 @@ export const changePassword = async (formData: FormData) => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  const password = formData.get('newPassword') as string
-  const confirm = formData.get('newConfirm') as string
+  const password = formData.get('password') as string
+  const confirm = formData.get('confirm') as string
 
-  console.log('test')
   if (password !== confirm) {
     return 'Passwords do not match';
   }
-  console.log('upd', password)
 
-  const res = await supabase.auth.updateUser({ password })
-
-  console.log(res)
-  if (res.error) {
-    return res.error?.message
+  const { error } = await supabase.auth.updateUser({ password })
+  if (error) {
+    return error?.message
   }
 }

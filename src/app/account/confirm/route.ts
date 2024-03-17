@@ -12,8 +12,6 @@ export const GET = async (request: NextRequest) => {
   const redirectTo = request.nextUrl.clone()
   redirectTo.pathname = next
 
-  console.log({ token_hash, type, next })
-
   if (token_hash && type) {
     const cookieStore = cookies()
     const supabase = createClient(cookieStore)
