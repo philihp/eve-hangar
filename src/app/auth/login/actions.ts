@@ -1,12 +1,10 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
 
-export async function login(formData: FormData) {
+export const login = async (formData: FormData) => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
@@ -17,14 +15,7 @@ export async function login(formData: FormData) {
     password: formData.get('password') as string,
   })
 
-  if (error) {
-    redirect('/error')
-  }
+  console.log({ data, error: JSON.stringify(error) })
 
-  console.log({data})
-
-  // revalidatePath('/', 'layout')
-  // redirect('/')
-
-  return { data, error } 
+  return error?.message
 }

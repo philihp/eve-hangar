@@ -1,30 +1,22 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
-import Link from "next/link"
 import "./globals.css";
+import Header from './layout/header';
 
 export const metadata: Metadata = {
   title: "EVE Hangar",
   description: "EVE Online Public Hangar",
 };
 
-export default function RootLayout({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body>
-        <header>
-          <h1>EVE Hangar</h1>
-          [
-            <Link href="/auth/login">Login</Link>
-          ]
-          [
-            <Link href="/auth/register">Register</Link>
-          ]
-        </header>
+        <Header />
         <hr />
         {children}
       </body>
@@ -32,3 +24,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default RootLayout;
