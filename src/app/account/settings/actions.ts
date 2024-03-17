@@ -9,7 +9,7 @@ export const logoff = async () => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  const { error } = await supabase.auth.signOut()
+  const { error } = await supabase.auth.signOut({ scope: 'local' })
 
   if (error) {
     console.log({ error: JSON.stringify(error) })
@@ -27,7 +27,7 @@ export const changePassword = async (formData: FormData) => {
   const confirm = formData.get('confirm') as string
 
   if (password !== confirm) {
-    return 'Passwords do not match';
+    return 'Passwords do not match'
   }
 
   const { error } = await supabase.auth.updateUser({ password })
