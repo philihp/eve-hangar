@@ -5,7 +5,9 @@ import { createClient } from '@/utils/supabase/server'
 
 import { logoff } from './actions'
 
-const LogoffPage = async () => {
+import ChangePassword from './changePassword'
+
+const SettingsPage = async () => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
@@ -17,14 +19,16 @@ const LogoffPage = async () => {
   return (
     <>
       <h1>Settings</h1>
-      <pre>
-        {JSON.stringify(data?.user, undefined, 2)}
-      </pre>
+
+      <ChangePassword />
+
+      <h2>Logoff</h2>
       <form>
         <button formAction={logoff}>Logoff</button>
       </form>
+      <pre>{JSON.stringify(data?.user, undefined, 2)}</pre>
     </>
   )
 }
 
-export default LogoffPage
+export default SettingsPage
