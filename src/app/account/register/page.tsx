@@ -25,7 +25,11 @@ const RegisterPage = () => {
   }
 
   return (
-    <form onSubmit={() => setDisabled(true)}>
+    <form onSubmit={() => {
+      setResponse('')
+      setDisabled(true)
+    }
+    }>
       <h1>Register</h1>
       <p>Create an account to manage your hangars.</p>
       <label htmlFor="email">Email:</label><br />
