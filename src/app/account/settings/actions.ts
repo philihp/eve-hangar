@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
 
-export const logoff = async (formData: FormData) => {
+export const logoff = async () => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 

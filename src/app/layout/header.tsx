@@ -25,7 +25,7 @@ const Header = async () => {
         &nbsp;[&nbsp;
         {userId}
         &nbsp;|&nbsp;
-        <Link href="/account/logoff">Logoff</Link> ]
+        <Link href="/account/settings">Settings</Link> ]
       </>}
   </header>
 }
