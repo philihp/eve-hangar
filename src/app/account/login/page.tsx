@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { login } from './actions'
 import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache';
 
 const Login = () => {
   const [response, setResponse] = useState('')
@@ -12,6 +13,7 @@ const Login = () => {
       setResponse(error)
       return;
     }
+    revalidatePath('/')
     redirect('/')
   }
 
