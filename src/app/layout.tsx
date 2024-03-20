@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
 import "./globals.css";
@@ -20,6 +21,7 @@ const RootLayout = async ({
         <hr />
         {children}
       </body>
+      <Analytics />
       <GoogleAnalytics gaId="G-F0XT9PME9M" />
     </html>
   );
