@@ -8,12 +8,12 @@ const CharacterPage = async () => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  const { data, error } = await supabase.auth.getUser()
-  if (error || !data?.user) {
+  const { data, error: authError } = await supabase.auth.getUser()
+  if (authError || !data?.user) {
     redirect('/')
   }
 
-  const { data: characters, ...all } = await supabase.from('character').select()
+  const { data: characters, status, statusText, error } = await supabase.from('character').select()
 
   return <>
     <h1>Characters</h1>
@@ -24,10 +24,16 @@ const CharacterPage = async () => {
         }
       </li>)}
     </ul >
+    {
+      error && <>
+        <strong>{status}: {statusText}</strong >
+        <br />
+        <em>{error.code}: {error.message}</em>
+      </>
+    }
     <form>
       <button formAction={register}>Add Character</button>
     </form>
-    <pre>{JSON.stringify(all, undefined, 2)}</pre>
   </>
 }
 export default CharacterPage

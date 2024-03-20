@@ -26,7 +26,7 @@ const SettingsPage = async () => {
       <form>
         <button formAction={logoff}>Logoff</button>
       </form>
-      <pre>{JSON.stringify(data?.user, undefined, 2)}</pre>
+      {/* <pre>{JSON.stringify(data?.user, undefined, 2)}</pre> */}
     </>
   )
 }
