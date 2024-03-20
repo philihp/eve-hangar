@@ -10,7 +10,6 @@ const Header = async () => {
   const userId = user?.email ?? undefined
   return <header>
 
-
     EVE Hangar
     {!userId &&
       <>
@@ -24,6 +23,8 @@ const Header = async () => {
       <>
         &nbsp;[&nbsp;
         {userId}
+        &nbsp;|&nbsp;
+        <Link href="/character/">Characters</Link>
         &nbsp;|&nbsp;
         <Link href="/account/settings">Settings</Link> ]
       </>}

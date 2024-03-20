@@ -12,7 +12,6 @@ export const logoff = async () => {
   const { error } = await supabase.auth.signOut({ scope: 'local' })
 
   if (error) {
-    console.log({ error: JSON.stringify(error) })
     return error?.message
   }
 

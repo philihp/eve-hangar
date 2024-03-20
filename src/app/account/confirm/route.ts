@@ -27,7 +27,6 @@ export const GET = async (request: NextRequest) => {
     console.log({ error })
   }
 
-
   // return the user to an error page with some instructions
   redirectTo.pathname = '/error'
   return NextResponse.redirect(redirectTo)

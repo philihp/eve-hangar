@@ -1,3 +1,5 @@
-export default function ErrorPage() {
+const ErrorPage = () => {
   return <p>Sorry, something went wrong</p>
 }
+
+export default ErrorPage
