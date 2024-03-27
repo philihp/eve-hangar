@@ -1,7 +1,11 @@
+name: Hourly
+
 on:
   workflow_dispatch:
   pull_request:
   push:
+  schedule:
+    - cron: '44 * * * *'
 
 jobs:
   refresh:
