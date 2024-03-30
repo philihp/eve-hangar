@@ -2,8 +2,6 @@ name: Hourly
 
 on:
   workflow_dispatch:
-  pull_request:
-  push:
   schedule:
     - cron: '44 * * * *'
 
@@ -19,3 +17,6 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm install
       - run: npm run hourly
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
