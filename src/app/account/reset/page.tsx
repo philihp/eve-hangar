@@ -1,14 +1,17 @@
 'use client';
 
 import { useState } from 'react'
-import { reset } from './actions'
+import { Turnstile } from '@marsidev/react-turnstile'
 
+import { reset } from './actions'
 
 const ResetPage = () => {
   const [disabled, setDisabled] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
+  const [captchaToken, setCaptchaToken] = useState<string>('')
+
   const resetAndReturn = async (formData: FormData) => {
-    await reset(formData)
+    await reset(formData, captchaToken)
     setEmailSent(true)
   }
 
@@ -25,6 +28,16 @@ const ResetPage = () => {
       <p>Forgot your password? Let&apos;s confirm your email to reset it.</p>
       <label htmlFor="email">Email:</label><br />
       <input id="email" name="email" type="email" required onChange={handleEmailChange} /><br />
+      <br />
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''}
+        onSuccess={setCaptchaToken}
+        options={{
+          action: 'reset',
+          theme: 'light',
+          size: 'normal'
+        }}
+      />
       <button formAction={resetAndReturn} disabled={disabled}>Send Email</button>
       {emailSent && <>
         <svg height="10" width="20">

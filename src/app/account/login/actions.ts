@@ -8,12 +8,9 @@ export const login = async (formData: FormData, captchaToken: string) => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  const email = formData.get('email') as string
-  const password = formData.get('password') as string
-
   const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
+    email: `${formData.get('email')}`,
+    password: `${formData.get('password')}`,
     options: { captchaToken },
   })
 

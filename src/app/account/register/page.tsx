@@ -1,14 +1,17 @@
 'use client';
 
 import { useState } from 'react'
+import { Turnstile } from '@marsidev/react-turnstile'
+
 import { register } from './actions'
 
 const RegisterPage = () => {
   const [disabled, setDisabled] = useState(false)
   const [color, setColor] = useState('#000000')
   const [response, setResponse] = useState('')
+  const [captchaToken, setCaptchaToken] = useState<string>('')
   const signupAndReturn = async (formData: FormData) => {
-    const { error } = await register(formData)
+    const { error } = await register(formData, captchaToken)
     if (error?.message) {
       setDisabled(false)
       setResponse(error?.message)
@@ -36,6 +39,17 @@ const RegisterPage = () => {
       <input id="email" name="email" type="email" required onChange={handleEmailChange} /><br />
       <label htmlFor="password">Password:</label><br />
       <input id="password" name="password" type="password" required /><br />
+
+      <br />
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''}
+        onSuccess={setCaptchaToken}
+        options={{
+          action: 'register',
+          theme: 'light',
+          size: 'normal'
+        }}
+      />
       <button formAction={signupAndReturn} disabled={disabled}>Register</button>
       {
         response &&
