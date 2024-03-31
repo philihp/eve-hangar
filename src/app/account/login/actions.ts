@@ -4,15 +4,17 @@ import { cookies } from 'next/headers'
 
 import { createClient } from '@/utils/supabase/server'
 
-export const login = async (formData: FormData) => {
+export const login = async (formData: FormData, captchaToken: string) => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  // type-casting here for convenience
-  // in practice, you should validate your inputs
+  const email = formData.get('email') as string
+  const password = formData.get('password') as string
+
   const { error } = await supabase.auth.signInWithPassword({
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
+    email,
+    password,
+    options: { captchaToken },
   })
 
   return error?.message

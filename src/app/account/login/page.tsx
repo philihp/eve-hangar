@@ -1,13 +1,17 @@
 'use client';
 
 import { useState } from 'react'
-import { login } from './actions'
 import { redirect } from 'next/navigation'
+import { Turnstile } from '@marsidev/react-turnstile'
+
+import { login } from './actions'
 
 const Login = () => {
-  const [response, setResponse] = useState('')
+  const [response, setResponse] = useState<string>('')
+  const [captchaToken, setCaptchaToken] = useState<string>('')
+
   const loginAndReturn = async (formData: FormData) => {
-    const error = await login(formData)
+    const error = await login(formData, captchaToken)
     if (error) {
       setResponse(error)
       return;
@@ -24,6 +28,10 @@ const Login = () => {
         <input id="email" name="email" type="email" required /><br />
         <label htmlFor="password">Password:</label><br />
         <input id="password" name="password" type="password" required /><br />
+        <Turnstile
+          siteKey={process.env.TURNSTILE_SITE_KEY ?? 'undefined'}
+          onSuccess={setCaptchaToken}
+        />
         <button formAction={loginAndReturn}>Log in</button>
         {response && <>
           <svg height="10" width="20">
