@@ -28,9 +28,15 @@ const Login = () => {
         <input id="email" name="email" type="email" required /><br />
         <label htmlFor="password">Password:</label><br />
         <input id="password" name="password" type="password" required /><br />
+        <br />
         <Turnstile
-          siteKey={process.env.TURNSTILE_SITE_KEY ?? 'undefined'}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''}
           onSuccess={setCaptchaToken}
+          options={{
+            action: 'login',
+            theme: 'light',
+            size: 'normal'
+          }}
         />
         <button formAction={loginAndReturn}>Log in</button>
         {response && <>
