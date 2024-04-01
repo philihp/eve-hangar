@@ -21,9 +21,9 @@ const RootLayout = async ({
         <Header />
         <hr />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
-      <Analytics />
-      <SpeedInsights />
       {/* <GoogleAnalytics gaId="{ process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }" /> */}
     </html>
   );
