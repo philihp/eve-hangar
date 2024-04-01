@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
-// import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+// import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from './layout/header';
