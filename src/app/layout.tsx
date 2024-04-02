@@ -8,6 +8,9 @@ import Header from './layout/header';
 export const metadata: Metadata = {
   title: "EVE Hangar",
   description: "EVE Online Public Hangar",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 const RootLayout = async ({
