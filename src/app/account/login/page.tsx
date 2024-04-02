@@ -28,7 +28,18 @@ const Login = () => {
         <input id="email" name="email" type="email" required /><br />
         <label htmlFor="password">Password:</label><br />
         <input id="password" name="password" type="password" required /><br />
-        <br />
+        <button formAction={loginAndReturn}>Log in</button>
+        {
+          response && <>
+            <svg height="10" width="20">
+              <circle cx="10" cy="5" r="5" fill="#FF0000" />
+            </svg>
+            {response}
+          </>
+        }
+        <div>
+          <a href="reset">Forgot Password</a>
+        </div>
         <Turnstile
           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''}
           onSuccess={setCaptchaToken}
@@ -38,16 +49,6 @@ const Login = () => {
             size: 'normal'
           }}
         />
-        <button formAction={loginAndReturn}>Log in</button>
-        {response && <>
-          <svg height="10" width="20">
-            <circle cx="10" cy="5" r="5" fill="#FF0000" />
-          </svg>
-          {response}
-        </>}
-        <div>
-          <a href="reset">Forgot Password</a>
-        </div>
       </form>
     </>
   )
