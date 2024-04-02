@@ -9,7 +9,20 @@ export const metadata: Metadata = {
   title: "EVE Hangar",
   description: "EVE Online Public Hangar",
   icons: {
-    icon: '/favicon.ico'
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/favicon-16x16.png'
+      },
+      {
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/favicon-32x32.png'
+      }
+    ]
   }
 };
 
