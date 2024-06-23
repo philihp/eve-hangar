@@ -16,4 +16,4 @@ jobs:
           path: postgres-latest.dmp.bz2
           key: active-${{ steps.date.outputs.date }}
       - if: steps.cache.outputs.cache-hit != 'true'
-        run: curl https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
+        run: curl -L -o postgres-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
