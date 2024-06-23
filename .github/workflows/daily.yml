@@ -26,12 +26,11 @@ jobs:
       - run: bzip2 --keep --decompress postgres-latest.dmp.bz2
 
       # and then convert it to an SQL file we can import into Supabase
-      - run: pg_restore --no-owner --clean -f postgres-latest.sql postgres-latest.dmp
+      - run: pg_restore --enable-row-security --no-owner --role=postgres --clean -f postgres-latest.sql postgres-latest.dmp
 
       - run: psql -p 6543 -d postgres < postgres-latest.sql
         env:
           PGHOST: ${{ vars.SUPABASE_HOST }}
           PGUSER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
           PGPASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
-          PGOPTIONS:
           PGDATABASE: postgres
