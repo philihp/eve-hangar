@@ -17,13 +17,13 @@ jobs:
       - uses: actions/cache@v4
         id: cache
         with:
-          path: postgres-latest.*
+          path: postgres-latest.dmp.bz2
           key: active-${{ steps.date.outputs.date }}  
       - if: steps.cache.outputs.cache-hit != 'true'
         run: curl -L -o postgres-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
 
       # decompress it
-      - run: bzip2 -d postgres-latest.dmp.bz2
+      - run: bzip2 --keep --decompress postgres-latest.dmp.bz2
 
       # and then convert it to an SQL file we can import into Supabase
       - run: pg_restore --no-owner --clean -f postgres-latest.sql postgres-latest.dmp
