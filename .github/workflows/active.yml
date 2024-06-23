@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         id: date
       - uses: actions/cache@v4
         id: cache
         with:
-          path: postgres-latest.dmp.bz2
+          path: postgres-schema-latest.dmp.bz2
           key: active-${{ steps.date.outputs.date }}
       - if: steps.cache.outputs.cache-hit != 'true'
-        run: curl -L -o postgres-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
+        run: curl -L -o postgres-schema-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-schema-latest.dmp.bz2
       - run: bzip2 -d postgres-schema-latest.dmp.bz2
       - run: pg_restore -f postgres-schema-latest.sql postgres-schema-latest.dmp
       - run: sed -i '' -e 's/OWNER TO yaml;$/OWNER TO postgres;/g' postgres-schema-latest.sql
