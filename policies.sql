@@ -1,269 +1,269 @@
-alter table "sde"."agtAgentTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."agtAgentTypes" to public using (true);
+alter table "public"."agtAgentTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."agtAgentTypes" to public using (true);
 
-alter table "sde"."agtAgents" enable row level security;
-create policy "Enable read access for all users" on "sde"."agtAgents" to public using (true);
+alter table "public"."agtAgents" enable row level security;
+create policy "Enable read access for all users" on "public"."agtAgents" to public using (true);
 
-alter table "sde"."agtAgentsInSpace" enable row level security;
-create policy "Enable read access for all users" on "sde"."agtAgentsInSpace" to public using (true); 
+alter table "public"."agtAgentsInSpace" enable row level security;
+create policy "Enable read access for all users" on "public"."agtAgentsInSpace" to public using (true); 
 
-alter table "sde"."agtResearchAgents" enable row level security;
-create policy "Enable read access for all users" on "sde"."agtResearchAgents" to public using (true);
+alter table "public"."agtResearchAgents" enable row level security;
+create policy "Enable read access for all users" on "public"."agtResearchAgents" to public using (true);
 
-alter table "sde"."certCerts" enable row level security;
-create policy "Enable read access for all users" on "sde"."certCerts" to public using (true);
+alter table "public"."certCerts" enable row level security;
+create policy "Enable read access for all users" on "public"."certCerts" to public using (true);
 
-alter table "sde"."certMasteries" enable row level security;
-create policy "Enable read access for all users" on "sde"."certMasteries" to public using (true);
+alter table "public"."certMasteries" enable row level security;
+create policy "Enable read access for all users" on "public"."certMasteries" to public using (true);
 
-alter table "sde"."certSkills" enable row level security;
-create policy "Enable read access for all users" on "sde"."certSkills" to public using (true); 
+alter table "public"."certSkills" enable row level security;
+create policy "Enable read access for all users" on "public"."certSkills" to public using (true); 
 
-alter table "sde"."chrAncestries" enable row level security;
-create policy "Enable read access for all users" on "sde"."chrAncestries" to public using (true);
+alter table "public"."chrAncestries" enable row level security;
+create policy "Enable read access for all users" on "public"."chrAncestries" to public using (true);
 
-alter table "sde"."chrAttributes" enable row level security;
-create policy "Enable read access for all users" on "sde"."chrAttributes" to public using (true);
+alter table "public"."chrAttributes" enable row level security;
+create policy "Enable read access for all users" on "public"."chrAttributes" to public using (true);
 
-alter table "sde"."chrBloodlines" enable row level security;
-create policy "Enable read access for all users" on "sde"."chrBloodlines" to public using (true);
+alter table "public"."chrBloodlines" enable row level security;
+create policy "Enable read access for all users" on "public"."chrBloodlines" to public using (true);
 
-alter table "sde"."chrFactions" enable row level security;
-create policy "Enable read access for all users" on "sde"."chrFactions" to public using (true);
+alter table "public"."chrFactions" enable row level security;
+create policy "Enable read access for all users" on "public"."chrFactions" to public using (true);
 
-alter table "sde"."chrRaces" enable row level security;
-create policy "Enable read access for all users" on "sde"."chrRaces" to public using (true); 
+alter table "public"."chrRaces" enable row level security;
+create policy "Enable read access for all users" on "public"."chrRaces" to public using (true); 
 
-alter table "sde"."crpActivities" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpActivities" to public using (true);
+alter table "public"."crpActivities" enable row level security;
+create policy "Enable read access for all users" on "public"."crpActivities" to public using (true);
 
-alter table "sde"."crpNPCCorporationDivisions" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpNPCCorporationDivisions" to public using (true); 
+alter table "public"."crpNPCCorporationDivisions" enable row level security;
+create policy "Enable read access for all users" on "public"."crpNPCCorporationDivisions" to public using (true); 
 
-alter table "sde"."crpNPCCorporationResearchFields" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpNPCCorporationResearchFields" to public using (true);
+alter table "public"."crpNPCCorporationResearchFields" enable row level security;
+create policy "Enable read access for all users" on "public"."crpNPCCorporationResearchFields" to public using (true);
 
-alter table "sde"."crpNPCCorporationTrades" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpNPCCorporationTrades" to public using (true);
+alter table "public"."crpNPCCorporationTrades" enable row level security;
+create policy "Enable read access for all users" on "public"."crpNPCCorporationTrades" to public using (true);
 
-alter table "sde"."crpNPCCorporations" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpNPCCorporations" to public using (true); 
+alter table "public"."crpNPCCorporations" enable row level security;
+create policy "Enable read access for all users" on "public"."crpNPCCorporations" to public using (true); 
 
-alter table "sde"."crpNPCDivisions" enable row level security;
-create policy "Enable read access for all users" on "sde"."crpNPCDivisions" to public using (true);
+alter table "public"."crpNPCDivisions" enable row level security;
+create policy "Enable read access for all users" on "public"."crpNPCDivisions" to public using (true);
 
-alter table "sde"."dgmAttributeCategories" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmAttributeCategories" to public using (true); 
+alter table "public"."dgmAttributeCategories" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmAttributeCategories" to public using (true); 
 
-alter table "sde"."dgmAttributeTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmAttributeTypes" to public using (true);
+alter table "public"."dgmAttributeTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmAttributeTypes" to public using (true);
 
-alter table "sde"."dgmEffects" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmEffects" to public using (true); 
+alter table "public"."dgmEffects" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmEffects" to public using (true); 
 
-alter table "sde"."dgmExpressions" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmExpressions" to public using (true); 
+alter table "public"."dgmExpressions" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmExpressions" to public using (true); 
 
-alter table "sde"."dgmTypeAttributes" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmTypeAttributes" to public using (true);
+alter table "public"."dgmTypeAttributes" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmTypeAttributes" to public using (true);
 
-alter table "sde"."dgmTypeEffects" enable row level security;
-create policy "Enable read access for all users" on "sde"."dgmTypeEffects" to public using (true); 
+alter table "public"."dgmTypeEffects" enable row level security;
+create policy "Enable read access for all users" on "public"."dgmTypeEffects" to public using (true); 
 
-alter table "sde"."eveGraphics" enable row level security;
-create policy "Enable read access for all users" on "sde"."eveGraphics" to public using (true);
+alter table "public"."eveGraphics" enable row level security;
+create policy "Enable read access for all users" on "public"."eveGraphics" to public using (true);
 
-alter table "sde"."eveIcons" enable row level security;
-create policy "Enable read access for all users" on "sde"."eveIcons" to public using (true); 
+alter table "public"."eveIcons" enable row level security;
+create policy "Enable read access for all users" on "public"."eveIcons" to public using (true); 
 
-alter table "sde"."eveUnits" enable row level security;
-create policy "Enable read access for all users" on "sde"."eveUnits" to public using (true); 
+alter table "public"."eveUnits" enable row level security;
+create policy "Enable read access for all users" on "public"."eveUnits" to public using (true); 
 
-alter table "sde"."industryActivity" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivity" to public using (true); 
+alter table "public"."industryActivity" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivity" to public using (true); 
 
-alter table "sde"."industryActivityMaterials" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivityMaterials" to public using (true);
+alter table "public"."industryActivityMaterials" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivityMaterials" to public using (true);
 
-alter table "sde"."industryActivityProbabilities" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivityProbabilities" to public using (true);
+alter table "public"."industryActivityProbabilities" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivityProbabilities" to public using (true);
 
-alter table "sde"."industryActivityProducts" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivityProducts" to public using (true); 
+alter table "public"."industryActivityProducts" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivityProducts" to public using (true); 
 
-alter table "sde"."industryActivityRaces" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivityRaces" to public using (true);
+alter table "public"."industryActivityRaces" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivityRaces" to public using (true);
 
-alter table "sde"."industryActivitySkills" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryActivitySkills" to public using (true); 
+alter table "public"."industryActivitySkills" enable row level security;
+create policy "Enable read access for all users" on "public"."industryActivitySkills" to public using (true); 
 
-alter table "sde"."industryBlueprints" enable row level security;
-create policy "Enable read access for all users" on "sde"."industryBlueprints" to public using (true); 
+alter table "public"."industryBlueprints" enable row level security;
+create policy "Enable read access for all users" on "public"."industryBlueprints" to public using (true); 
 
-alter table "sde"."invCategories" enable row level security;
-create policy "Enable read access for all users" on "sde"."invCategories" to public using (true);
+alter table "public"."invCategories" enable row level security;
+create policy "Enable read access for all users" on "public"."invCategories" to public using (true);
 
-alter table "sde"."invContrabandTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."invContrabandTypes" to public using (true); 
+alter table "public"."invContrabandTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."invContrabandTypes" to public using (true); 
 
-alter table "sde"."invControlTowerResourcePurposes" enable row level security;
-create policy "Enable read access for all users" on "sde"."invControlTowerResourcePurposes" to public using (true);
+alter table "public"."invControlTowerResourcePurposes" enable row level security;
+create policy "Enable read access for all users" on "public"."invControlTowerResourcePurposes" to public using (true);
 
-alter table "sde"."invControlTowerResources" enable row level security;
-create policy "Enable read access for all users" on "sde"."invControlTowerResources" to public using (true); 
+alter table "public"."invControlTowerResources" enable row level security;
+create policy "Enable read access for all users" on "public"."invControlTowerResources" to public using (true); 
 
-alter table "sde"."invFlags" enable row level security;
-create policy "Enable read access for all users" on "sde"."invFlags" to public using (true); 
+alter table "public"."invFlags" enable row level security;
+create policy "Enable read access for all users" on "public"."invFlags" to public using (true); 
 
-alter table "sde"."invGroups" enable row level security;
-create policy "Enable read access for all users" on "sde"."invGroups" to public using (true);
+alter table "public"."invGroups" enable row level security;
+create policy "Enable read access for all users" on "public"."invGroups" to public using (true);
 
-alter table "sde"."invItems" enable row level security;
-create policy "Enable read access for all users" on "sde"."invItems" to public using (true); 
+alter table "public"."invItems" enable row level security;
+create policy "Enable read access for all users" on "public"."invItems" to public using (true); 
 
-alter table "sde"."invMarketGroups" enable row level security;
-create policy "Enable read access for all users" on "sde"."invMarketGroups" to public using (true);
+alter table "public"."invMarketGroups" enable row level security;
+create policy "Enable read access for all users" on "public"."invMarketGroups" to public using (true);
 
-alter table "sde"."invMetaGroups" enable row level security;
-create policy "Enable read access for all users" on "sde"."invMetaGroups" to public using (true);
+alter table "public"."invMetaGroups" enable row level security;
+create policy "Enable read access for all users" on "public"."invMetaGroups" to public using (true);
 
-alter table "sde"."invMetaTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."invMetaTypes" to public using (true); 
+alter table "public"."invMetaTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."invMetaTypes" to public using (true); 
 
-alter table "sde"."invNames" enable row level security;
-create policy "Enable read access for all users" on "sde"."invNames" to public using (true); 
+alter table "public"."invNames" enable row level security;
+create policy "Enable read access for all users" on "public"."invNames" to public using (true); 
 
-alter table "sde"."invPositions" enable row level security;
-create policy "Enable read access for all users" on "sde"."invPositions" to public using (true); 
+alter table "public"."invPositions" enable row level security;
+create policy "Enable read access for all users" on "public"."invPositions" to public using (true); 
 
-alter table "sde"."invTraits" enable row level security;
-create policy "Enable read access for all users" on "sde"."invTraits" to public using (true);
+alter table "public"."invTraits" enable row level security;
+create policy "Enable read access for all users" on "public"."invTraits" to public using (true);
 
-alter table "sde"."invTypeMaterials" enable row level security;
-create policy "Enable read access for all users" on "sde"."invTypeMaterials" to public using (true); 
+alter table "public"."invTypeMaterials" enable row level security;
+create policy "Enable read access for all users" on "public"."invTypeMaterials" to public using (true); 
 
-alter table "sde"."invTypeReactions" enable row level security;
-create policy "Enable read access for all users" on "sde"."invTypeReactions" to public using (true); 
+alter table "public"."invTypeReactions" enable row level security;
+create policy "Enable read access for all users" on "public"."invTypeReactions" to public using (true); 
 
-alter table "sde"."invTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."invTypes" to public using (true); 
+alter table "public"."invTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."invTypes" to public using (true); 
 
-alter table "sde"."invUniqueNames" enable row level security;
-create policy "Enable read access for all users" on "sde"."invUniqueNames" to public using (true); 
+alter table "public"."invUniqueNames" enable row level security;
+create policy "Enable read access for all users" on "public"."invUniqueNames" to public using (true); 
 
-alter table "sde"."invVolumes" enable row level security;
-create policy "Enable read access for all users" on "sde"."invVolumes" to public using (true); 
+alter table "public"."invVolumes" enable row level security;
+create policy "Enable read access for all users" on "public"."invVolumes" to public using (true); 
 
-alter table "sde"."mapCelestialGraphics" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapCelestialGraphics" to public using (true); 
+alter table "public"."mapCelestialGraphics" enable row level security;
+create policy "Enable read access for all users" on "public"."mapCelestialGraphics" to public using (true); 
 
-alter table "sde"."mapCelestialStatistics" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapCelestialStatistics" to public using (true); 
+alter table "public"."mapCelestialStatistics" enable row level security;
+create policy "Enable read access for all users" on "public"."mapCelestialStatistics" to public using (true); 
 
-alter table "sde"."mapConstellationJumps" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapConstellationJumps" to public using (true);
+alter table "public"."mapConstellationJumps" enable row level security;
+create policy "Enable read access for all users" on "public"."mapConstellationJumps" to public using (true);
 
-alter table "sde"."mapConstellations" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapConstellations" to public using (true);
+alter table "public"."mapConstellations" enable row level security;
+create policy "Enable read access for all users" on "public"."mapConstellations" to public using (true);
 
-alter table "sde"."mapDenormalize" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapDenormalize" to public using (true); 
+alter table "public"."mapDenormalize" enable row level security;
+create policy "Enable read access for all users" on "public"."mapDenormalize" to public using (true); 
 
-alter table "sde"."mapJumps" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapJumps" to public using (true); 
+alter table "public"."mapJumps" enable row level security;
+create policy "Enable read access for all users" on "public"."mapJumps" to public using (true); 
 
-alter table "sde"."mapLandmarks" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapLandmarks" to public using (true); 
+alter table "public"."mapLandmarks" enable row level security;
+create policy "Enable read access for all users" on "public"."mapLandmarks" to public using (true); 
 
-alter table "sde"."mapLocationScenes" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapLocationScenes" to public using (true);
+alter table "public"."mapLocationScenes" enable row level security;
+create policy "Enable read access for all users" on "public"."mapLocationScenes" to public using (true);
 
-alter table "sde"."mapLocationWormholeClasses" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapLocationWormholeClasses" to public using (true); 
+alter table "public"."mapLocationWormholeClasses" enable row level security;
+create policy "Enable read access for all users" on "public"."mapLocationWormholeClasses" to public using (true); 
 
-alter table "sde"."mapRegionJumps" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapRegionJumps" to public using (true); 
+alter table "public"."mapRegionJumps" enable row level security;
+create policy "Enable read access for all users" on "public"."mapRegionJumps" to public using (true); 
 
-alter table "sde"."mapRegions" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapRegions" to public using (true); 
+alter table "public"."mapRegions" enable row level security;
+create policy "Enable read access for all users" on "public"."mapRegions" to public using (true); 
 
-alter table "sde"."mapSolarSystemJumps" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapSolarSystemJumps" to public using (true);
+alter table "public"."mapSolarSystemJumps" enable row level security;
+create policy "Enable read access for all users" on "public"."mapSolarSystemJumps" to public using (true);
 
-alter table "sde"."mapSolarSystems" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapSolarSystems" to public using (true);
+alter table "public"."mapSolarSystems" enable row level security;
+create policy "Enable read access for all users" on "public"."mapSolarSystems" to public using (true);
 
-alter table "sde"."mapUniverse" enable row level security;
-create policy "Enable read access for all users" on "sde"."mapUniverse" to public using (true);
+alter table "public"."mapUniverse" enable row level security;
+create policy "Enable read access for all users" on "public"."mapUniverse" to public using (true);
 
-alter table "sde"."planetSchematics" enable row level security;
-create policy "Enable read access for all users" on "sde"."planetSchematics" to public using (true); 
+alter table "public"."planetSchematics" enable row level security;
+create policy "Enable read access for all users" on "public"."planetSchematics" to public using (true); 
 
-alter table "sde"."planetSchematicsPinMap" enable row level security;
-create policy "Enable read access for all users" on "sde"."planetSchematicsPinMap" to public using (true); 
+alter table "public"."planetSchematicsPinMap" enable row level security;
+create policy "Enable read access for all users" on "public"."planetSchematicsPinMap" to public using (true); 
 
-alter table "sde"."planetSchematicsTypeMap" enable row level security;
-create policy "Enable read access for all users" on "sde"."planetSchematicsTypeMap" to public using (true);
+alter table "public"."planetSchematicsTypeMap" enable row level security;
+create policy "Enable read access for all users" on "public"."planetSchematicsTypeMap" to public using (true);
 
-alter table "sde"."ramActivities" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramActivities" to public using (true);
+alter table "public"."ramActivities" enable row level security;
+create policy "Enable read access for all users" on "public"."ramActivities" to public using (true);
 
-alter table "sde"."ramAssemblyLineStations" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramAssemblyLineStations" to public using (true);
+alter table "public"."ramAssemblyLineStations" enable row level security;
+create policy "Enable read access for all users" on "public"."ramAssemblyLineStations" to public using (true);
 
-alter table "sde"."ramAssemblyLineTypeDetailPerCategory" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramAssemblyLineTypeDetailPerCategory" to public using (true);
+alter table "public"."ramAssemblyLineTypeDetailPerCategory" enable row level security;
+create policy "Enable read access for all users" on "public"."ramAssemblyLineTypeDetailPerCategory" to public using (true);
 
-alter table "sde"."ramAssemblyLineTypeDetailPerGroup" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramAssemblyLineTypeDetailPerGroup" to public using (true);
+alter table "public"."ramAssemblyLineTypeDetailPerGroup" enable row level security;
+create policy "Enable read access for all users" on "public"."ramAssemblyLineTypeDetailPerGroup" to public using (true);
 
-alter table "sde"."ramAssemblyLineTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramAssemblyLineTypes" to public using (true); 
+alter table "public"."ramAssemblyLineTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."ramAssemblyLineTypes" to public using (true); 
 
-alter table "sde"."ramInstallationTypeContents" enable row level security;
-create policy "Enable read access for all users" on "sde"."ramInstallationTypeContents" to public using (true);
+alter table "public"."ramInstallationTypeContents" enable row level security;
+create policy "Enable read access for all users" on "public"."ramInstallationTypeContents" to public using (true);
 
-alter table "sde"."skinLicense" enable row level security;
-create policy "Enable read access for all users" on "sde"."skinLicense" to public using (true);
+alter table "public"."skinLicense" enable row level security;
+create policy "Enable read access for all users" on "public"."skinLicense" to public using (true);
 
-alter table "sde"."skinMaterials" enable row level security;
-create policy "Enable read access for all users" on "sde"."skinMaterials" to public using (true);
+alter table "public"."skinMaterials" enable row level security;
+create policy "Enable read access for all users" on "public"."skinMaterials" to public using (true);
 
-alter table "sde"."skinShip" enable row level security;
-create policy "Enable read access for all users" on "sde"."skinShip" to public using (true); 
+alter table "public"."skinShip" enable row level security;
+create policy "Enable read access for all users" on "public"."skinShip" to public using (true); 
 
-alter table "sde"."skins" enable row level security;
-create policy "Enable read access for all users" on "sde"."skins" to public using (true);
+alter table "public"."skins" enable row level security;
+create policy "Enable read access for all users" on "public"."skins" to public using (true);
 
-alter table "sde"."staOperationServices" enable row level security;
-create policy "Enable read access for all users" on "sde"."staOperationServices" to public using (true); 
+alter table "public"."staOperationServices" enable row level security;
+create policy "Enable read access for all users" on "public"."staOperationServices" to public using (true); 
 
-alter table "sde"."staOperations" enable row level security;
-create policy "Enable read access for all users" on "sde"."staOperations" to public using (true);
+alter table "public"."staOperations" enable row level security;
+create policy "Enable read access for all users" on "public"."staOperations" to public using (true);
 
-alter table "sde"."staServices" enable row level security;
-create policy "Enable read access for all users" on "sde"."staServices" to public using (true);
+alter table "public"."staServices" enable row level security;
+create policy "Enable read access for all users" on "public"."staServices" to public using (true);
 
-alter table "sde"."staStationTypes" enable row level security;
-create policy "Enable read access for all users" on "sde"."staStationTypes" to public using (true);
+alter table "public"."staStationTypes" enable row level security;
+create policy "Enable read access for all users" on "public"."staStationTypes" to public using (true);
 
-alter table "sde"."staStations" enable row level security;
-create policy "Enable read access for all users" on "sde"."staStations" to public using (true);
+alter table "public"."staStations" enable row level security;
+create policy "Enable read access for all users" on "public"."staStations" to public using (true);
 
-alter table "sde"."translationTables" enable row level security;
-create policy "Enable read access for all users" on "sde"."translationTables" to public using (true);
+alter table "public"."translationTables" enable row level security;
+create policy "Enable read access for all users" on "public"."translationTables" to public using (true);
 
-alter table "sde"."trnTranslationColumns" enable row level security;
-create policy "Enable read access for all users" on "sde"."trnTranslationColumns" to public using (true);
+alter table "public"."trnTranslationColumns" enable row level security;
+create policy "Enable read access for all users" on "public"."trnTranslationColumns" to public using (true);
 
-alter table "sde"."trnTranslationLanguages" enable row level security;
-create policy "Enable read access for all users" on "sde"."trnTranslationLanguages" to public using (true);
+alter table "public"."trnTranslationLanguages" enable row level security;
+create policy "Enable read access for all users" on "public"."trnTranslationLanguages" to public using (true);
 
-alter table "sde"."trnTranslations" enable row level security;
-create policy "Enable read access for all users" on "sde"."trnTranslations" to public using (true);
+alter table "public"."trnTranslations" enable row level security;
+create policy "Enable read access for all users" on "public"."trnTranslations" to public using (true);
 
-alter table "sde"."warCombatZoneSystems" enable row level security;
-create policy "Enable read access for all users" on "sde"."warCombatZoneSystems" to public using (true); 
+alter table "public"."warCombatZoneSystems" enable row level security;
+create policy "Enable read access for all users" on "public"."warCombatZoneSystems" to public using (true); 
 
-alter table "sde"."warCombatZones" enable row level security;
-create policy "Enable read access for all users" on "sde"."warCombatZones" to public using (true);
+alter table "public"."warCombatZones" enable row level security;
+create policy "Enable read access for all users" on "public"."warCombatZones" to public using (true);

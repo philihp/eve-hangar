@@ -26,8 +26,7 @@ jobs:
       - run: bzip2 --keep --decompress postgres-latest.dmp.bz2
 
       # and then convert it to an SQL file we can import into Supabase
-      # - run: pg_restore --no-owner --role=postgres --data-only -f postgres-latest.sql postgres-latest.dmp
-      - run: pg_restore --schema=sde --no-owner --role=postgres --clean --if-exists -f postgres-latest.sql postgres-latest.dmp
+      - run: pg_restore --no-owner --role=postgres --clean --if-exists -f postgres-latest.sql postgres-latest.dmp
 
       - run: psql -p 6543 -d postgres < postgres-latest.sql
         env:
