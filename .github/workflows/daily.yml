@@ -35,3 +35,10 @@ jobs:
           PGUSER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
           PGPASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
           PGDATABASE: postgres
+
+      - run: psql -p 6543 -d postgres < policies.sql
+        env:
+          PGHOST: ${{ vars.SUPABASE_HOST }}
+          PGUSER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+          PGPASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
+          PGDATABASE: postgres
