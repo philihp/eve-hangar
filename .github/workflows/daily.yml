@@ -1,0 +1,37 @@
+name: Daily
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 11 * * *'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # once a day, we want to download the export from Steve and cache it.
+      - run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        id: date
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: postgres-latest.*
+          key: active-${{ steps.date.outputs.date }}  
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: curl -L -o postgres-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
+
+      # decompress it
+      - run: bzip2 -d postgres-latest.dmp.bz2
+
+      # and then convert it to an SQL file we can import into Supabase
+      - run: pg_restore --no-owner --clean -f postgres-latest.sql postgres-latest.dmp
+
+      - run: psql -p 6543 -d postgres < postgres-latest.sql
+        env:
+          PGHOST: ${{ vars.SUPABASE_HOST }}
+          PGUSER: postgres.${{ vars.SUPABASE_PROJECT_REF }}
+          PGPASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
+          PGOPTIONS:
+          PGDATABASE: postgres
