@@ -1,0 +1,19 @@
+name: Active
+
+on:
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        id: date
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: postgres-latest.dmp.bz2
+          key: active-${{ steps.date.outputs.date }}
+      - if: steps.cache.outputs.cache-hit != 'true'
+        run: curl https://www.fuzzwork.co.uk/dump/postgres-latest.dmp.bz2
