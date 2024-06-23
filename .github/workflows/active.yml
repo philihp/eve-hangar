@@ -19,7 +19,7 @@ jobs:
         run: curl -L -o postgres-schema-latest.dmp.bz2 https://www.fuzzwork.co.uk/dump/postgres-schema-latest.dmp.bz2
       - run: bzip2 -d postgres-schema-latest.dmp.bz2
       - run: pg_restore -f postgres-schema-latest.sql postgres-schema-latest.dmp
-      - run: sed -i '' -e 's/OWNER TO yaml;$/OWNER TO postgres;/g' postgres-schema-latest.sql
+      - run: sed -i 's/OWNER TO yaml;$/OWNER TO postgres;/g' postgres-schema-latest.sql
       - uses: actions/upload-artifact@v4
         with:
           name: postgres-schema-latest.sql
