@@ -8,14 +8,14 @@ const supabasePassword = process.env.SUPABASE_PASSWORD
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
-export const sudobase = createClient(supabaseUrl, supabaseServiceKey, {
+export const sudoSupabase = createClient(supabaseUrl, supabaseServiceKey, {
   auth: {
     autoRefreshToken: false,
     persistSession: false,
   },
 })
 
-export const supabaseAdmin = sudobase.auth.admin
+export const sudoSupabaseAdmin = sudoSupabase.auth.admin
 
 export const authenticate = async () => {
   const { data, error } = await supabase.auth.signInWithPassword({

@@ -1,8 +1,8 @@
-import { authenticate, sudobase } from './supabase.js'
+import { authenticate, sudoSupabase } from './supabase.js'
 
 const execute = async () => {
   await authenticate()
-  const res = await sudobase.from('character_tokens').select(`id, name`)
+  const res = await sudoSupabase.from('character_token').select(`id, name`)
   console.log(res)
 }
 
