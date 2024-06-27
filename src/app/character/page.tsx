@@ -29,6 +29,7 @@ const CharacterPage = async () => {
         <strong>{status}: {statusText}</strong >
         <br />
         <em>{error.code}: {error.message}</em>
+        <pre>{JSON.stringify(error, undefined, 2)}</pre>
       </>
     }
     <form>
