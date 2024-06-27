@@ -28,6 +28,8 @@ jobs:
       # and then convert it to an SQL file we can import into Supabase
       - run: pg_restore --no-owner --role=postgres --clean --if-exists -f postgres-latest.sql postgres-latest.dmp
 
+      - run: sed -i 's/public\./evesde\./g' postgres-latest.sql
+
       - run: psql -p 6543 -d postgres < postgres-latest.sql
         env:
           PGHOST: ${{ vars.SUPABASE_HOST }}
