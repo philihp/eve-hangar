@@ -271,5 +271,6 @@ create policy "Enable read access for all users" on "evesde"."warCombatZones" to
 truncate "evesde"."dgmTypeAttributes";
 truncate "evesde"."trnTranslations";
 truncate "evesde"."mapDenormalize";
+truncate "evesde"."invPositions";
 
 
