@@ -267,3 +267,9 @@ create policy "Enable read access for all users" on "evesde"."warCombatZoneSyste
 
 alter table "evesde"."warCombatZones" enable row level security;
 create policy "Enable read access for all users" on "evesde"."warCombatZones" to public using (true);
+
+truncate "evesde"."dgmTypeAttributes";
+truncate "evesde"."trnTranslations";
+truncate "evesde"."mapDenormalize";
+
+
