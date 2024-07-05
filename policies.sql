@@ -269,8 +269,12 @@ alter table "evesde"."warCombatZones" enable row level security;
 create policy "Enable read access for all users" on "evesde"."warCombatZones" to public using (true);
 
 truncate "evesde"."dgmTypeAttributes";
+vacuum full "evesde"."dgmTypeAttributes";
 truncate "evesde"."trnTranslations";
+vacuum full "evesde"."trnTranslations";
 truncate "evesde"."mapDenormalize";
+vacuum full "evesde"."mapDenormalize";
 truncate "evesde"."invPositions";
+vacuum full "evesde"."invPositions";
 
 
