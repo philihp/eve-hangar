@@ -6,7 +6,6 @@
   "dependencies": {
     "@marsidev/react-turnstile": "1.0.2",
     "@next/third-parties": "14.2.15",
-    "@philihp/prettier-config": "1.0.0",
     "@supabase/auth-helpers-nextjs": "0.10.0",
     "@supabase/ssr": "0.5.1",
     "@supabase/supabase-js": "2.45.6",
@@ -32,15 +31,21 @@
     "refresh": "node src/refresh.js",
     "lint": "next lint",
     "ping": "node src/ping-db.js",
+    "prepare": "husky",
+    "pretty": "prettier --write src/",
     "start": "next start"
   },
   "prettier": "@philihp/prettier-config",
   "devDependencies": {
+    "@philihp/prettier-config": "1.0.0",
     "@types/node": "20.16.13",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "eslint": "8.57.1",
     "eslint-config-next": "14.2.15",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
+    "prettier": "3.3.3",
     "supabase": "1.204.3",
     "typescript": "5.6.3"
   }

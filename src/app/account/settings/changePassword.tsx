@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 
 import { changePassword } from './actions'
 import Dot from './dot'
@@ -21,21 +21,23 @@ const ChangePassword = () => {
     setResponse('Password changed')
   }
 
-  return <>
-    <h2>Change Password</h2>
-    <form>
-      <label htmlFor="password">New Password:</label><br />
-      <input id="password" name="password" type="password" required /><br />
-      <label htmlFor="confirm">Confirm Password:</label><br />
-      <input id="confirm" name="confirm" type="password" required /><br />
-      <button formAction={changePasswordAndReturn}>Change Password</button>
-    </form>
-    <p>
-      {response &&
-        <Dot color={color} response={response} />
-      }
-    </p>
-  </>
+  return (
+    <>
+      <h2>Change Password</h2>
+      <form>
+        <label htmlFor="password">New Password:</label>
+        <br />
+        <input id="password" name="password" type="password" required />
+        <br />
+        <label htmlFor="confirm">Confirm Password:</label>
+        <br />
+        <input id="confirm" name="confirm" type="password" required />
+        <br />
+        <button formAction={changePasswordAndReturn}>Change Password</button>
+      </form>
+      <p>{response && <Dot color={color} response={response} />}</p>
+    </>
+  )
 }
 
 export default ChangePassword

@@ -15,26 +15,26 @@ const CharacterPage = async () => {
 
   const { data: characters, status, statusText, error } = await supabase.from('character').select()
 
-  return <>
-    <h1>Characters</h1>
-    <ul>
-      {characters?.map(c => <li key={`character-${c.id}`}>
-        {
-          JSON.stringify(c)
-        }
-      </li>)}
-    </ul >
-    {
-      error && <>
-        <strong>{status}: {statusText}</strong >
-        <br />
-        <em>{error.code}: {error.message}</em>
-        <pre>{JSON.stringify(error, undefined, 2)}</pre>
-      </>
-    }
-    <form>
-      <button formAction={register}>Add Character</button>
-    </form>
-  </>
+  return (
+    <>
+      <h1>Characters</h1>
+      <ul>{characters?.map((c) => <li key={`character-${c.id}`}>{JSON.stringify(c)}</li>)}</ul>
+      {error && (
+        <>
+          <strong>
+            {status}: {statusText}
+          </strong>
+          <br />
+          <em>
+            {error.code}: {error.message}
+          </em>
+          <pre>{JSON.stringify(error, undefined, 2)}</pre>
+        </>
+      )}
+      <form>
+        <button formAction={register}>Add Character</button>
+      </form>
+    </>
+  )
 }
 export default CharacterPage

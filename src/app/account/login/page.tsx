@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { useState } from 'react'
 import { redirect } from 'next/navigation'
@@ -14,7 +14,7 @@ const Login = () => {
     const error = await login(formData, captchaToken)
     if (error) {
       setResponse(error)
-      return;
+      return
     }
     redirect('/')
   }
@@ -24,19 +24,23 @@ const Login = () => {
       <h1>Login</h1>
       <p>Login to access your hangar.</p>
       <form onSubmit={() => setResponse('')}>
-        <label htmlFor="email">Email:</label><br />
-        <input id="email" name="email" type="email" required /><br />
-        <label htmlFor="password">Password:</label><br />
-        <input id="password" name="password" type="password" required /><br />
+        <label htmlFor="email">Email:</label>
+        <br />
+        <input id="email" name="email" type="email" required />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <br />
+        <input id="password" name="password" type="password" required />
+        <br />
         <button formAction={loginAndReturn}>Log in</button>
-        {
-          response && <>
+        {response && (
+          <>
             <svg height="10" width="20">
               <circle cx="10" cy="5" r="5" fill="#FF0000" />
             </svg>
             {response}
           </>
-        }
+        )}
         <div>
           <a href="reset">Forgot Password</a>
         </div>
@@ -46,7 +50,7 @@ const Login = () => {
           options={{
             action: 'login',
             theme: 'light',
-            size: 'normal'
+            size: 'normal',
           }}
         />
       </form>

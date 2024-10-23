@@ -8,33 +8,35 @@ import { createClient } from '@/utils/supabase/server'
 
 import { sso } from '../sso'
 
-const upsertCharacter = (supabase: SupabaseClient) => async (columns: {
-  user_id: string,
-  owner: string, name: string
-}) => {
-  const response = await supabase.from('character').upsert(columns, { onConflict: 'owner' }).select()
-  if (response.error) console.error(response.error)
-  return response.data?.[0]?.id
-}
+const upsertCharacter =
+  (supabase: SupabaseClient) => async (columns: { user_id: string; owner: string; name: string }) => {
+    const response = await supabase.from('character').upsert(columns, { onConflict: 'owner' }).select()
+    if (response.error) console.error(response.error)
+    return response.data?.[0]?.id
+  }
 
-const upsertToken = (supabase: SupabaseClient) => async (columns: {
-  user_id: string,
-  character_id: string,
-  access_token: string,
-  refresh_token: string,
-  issued_at: string,
-  expires_at: string,
-  scope: string[],
-}) => {
-  const response = await supabase.from('token').upsert(columns, { onConflict: 'character_id, scope' }).select()
-  if (response.error) console.error(response.error)
-  return response.data?.[0]?.id
-}
+const upsertToken =
+  (supabase: SupabaseClient) =>
+  async (columns: {
+    user_id: string
+    character_id: string
+    access_token: string
+    refresh_token: string
+    issued_at: string
+    expires_at: string
+    scope: string[]
+  }) => {
+    const response = await supabase.from('token').upsert(columns, { onConflict: 'character_id, scope' }).select()
+    if (response.error) console.error(response.error)
+    return response.data?.[0]?.id
+  }
 
 export const GET = async (request: NextRequest) => {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
-  const { data: { user } } = await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
   const user_id = user?.id ?? ''
 
   const { searchParams } = new URL(request.url)
