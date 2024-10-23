@@ -1,7 +1,6 @@
 // /character/callback
 
 import { SupabaseClient, type EmailOtpType } from '@supabase/supabase-js'
-import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 import { createClient } from '@/utils/supabase/server'
@@ -32,8 +31,7 @@ const upsertToken =
   }
 
 export const GET = async (request: NextRequest) => {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
   const {
     data: { user },
   } = await supabase.auth.getUser()

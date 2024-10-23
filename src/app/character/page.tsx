@@ -1,12 +1,10 @@
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
 import { register } from './actions'
 
 const CharacterPage = async () => {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
 
   const { data, error: authError } = await supabase.auth.getUser()
   if (authError || !data?.user) {
