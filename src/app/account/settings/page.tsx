@@ -6,6 +6,7 @@ import { createClient } from '@/utils/supabase/server'
 import { logoff } from './actions'
 
 import ChangePassword from './changePassword'
+import { revalidatePath } from 'next/cache'
 
 const SettingsPage = async () => {
   const cookieStore = cookies()
@@ -16,6 +17,11 @@ const SettingsPage = async () => {
     redirect('/account/login')
   }
 
+  const logoffAndReturn = async (_formData: FormData) => {
+    await logoff()
+    revalidatePath('/account/settings')
+  }
+
   return (
     <>
       <h1>Settings</h1>
@@ -24,7 +30,7 @@ const SettingsPage = async () => {
 
       <h2>Logoff</h2>
       <form>
-        <button formAction={logoff}>Logoff</button>
+        <button formAction={logoffAndReturn}>Logoff</button>
       </form>
       {/* <pre>{JSON.stringify(data?.user, undefined, 2)}</pre> */}
     </>
