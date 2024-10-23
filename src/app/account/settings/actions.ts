@@ -1,13 +1,11 @@
 'use server'
 
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
 
 export const logoff = async () => {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
 
   const { error } = await supabase.auth.signOut({ scope: 'local' })
 
@@ -19,8 +17,7 @@ export const logoff = async () => {
 }
 
 export const changePassword = async (formData: FormData) => {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
 
   const password = formData.get('password') as string
   const confirm = formData.get('confirm') as string

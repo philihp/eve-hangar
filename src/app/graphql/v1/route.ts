@@ -1,7 +1,6 @@
 import { createYoga, createSchema } from 'graphql-yoga'
 import { gql } from 'graphql-tag'
 import { cost } from 'eve-industry'
-import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/utils/supabase/server'
 
@@ -43,8 +42,7 @@ type Context = {
 }
 
 const handleRequest = (req: NextRequest, res: NextResponse) => {
-  const cookieStore = cookies()
-  const context: Context = { dataSource: createClient(cookieStore) }
+  const context: Context = { dataSource: createClient() }
 
   return createYoga({
     schema: createSchema({

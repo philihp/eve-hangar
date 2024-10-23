@@ -13,8 +13,7 @@ export const GET = async (request: NextRequest) => {
   redirectTo.pathname = next
 
   if (token_hash && type) {
-    const cookieStore = cookies()
-    const supabase = createClient(cookieStore)
+    const supabase = createClient()
 
     const { error } = await supabase.auth.verifyOtp({
       type,
