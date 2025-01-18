@@ -8,7 +8,7 @@
     "@next/third-parties": "14.2.23",
     "@supabase/auth-helpers-nextjs": "0.10.0",
     "@supabase/ssr": "0.5.2",
-    "@supabase/supabase-js": "2.47.12",
+    "@supabase/supabase-js": "2.47.16",
     "@vercel/analytics": "1.4.1",
     "@vercel/speed-insights": "1.1.0",
     "dotenv": "16.4.7",
