@@ -40,7 +40,7 @@
     "@philihp/prettier-config": "1.0.0",
     "@types/node": "22.13.10",
     "@types/ramda": "0.30.2",
-    "@types/react": "18.3.20",
+    "@types/react": "18.3.21",
     "@types/react-dom": "18.3.7",
     "eslint": "8.57.1",
     "eslint-config-next": "14.2.28",
